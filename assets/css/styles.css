@@ -1,4 +1,363 @@
-/*Add your custom styles here*/
-.starting-title {
-    text-align: center;
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
 }
+
+::-webkit-scrollbar-thumb {
+  background-color: #cccccc;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: #f1f1f1;
+}
+
+header {
+  height: 55px;
+  align-items: center;
+  justify-content: center;
+}
+header h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #f1f1f1;
+  text-shadow: 0 0 5px black;
+}
+header button {
+  align-items: center;
+  justify-content: center;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: rgb(80, 88, 145);
+}
+
+.userBlock {
+  overflow: hidden;
+  box-shadow: 0 0 5px black;
+}
+
+.userBlock div {
+  border-bottom: #cccccc solid 1px;
+  border-left: #cccccc solid 1px;
+  border-right: #cccccc solid 1px;
+  padding: 5px;
+}
+
+.userInfo {
+  background-color: rgb(242, 242, 253);
+  float: left;
+  width: 99%;
+}
+.userInfo .removeUserButton {
+  width: 10%;
+  position: relative;
+  float: right;
+  height: 35px;
+  margin-top: 35px;
+  transform: translate(0, -35%);
+  background-color: rgb(117, 117, 117);
+  color: aliceblue;
+  cursor: pointer;
+  border: rgba(0, 0, 0, 0) solid 2px;
+  font-size: 110%;
+  outline: none;
+}
+.userInfo .removeUserButton:hover {
+  border: black solid 2px;
+  background-color: #424242;
+  border-radius: 3px;
+}
+
+.name,
+.username,
+.email,
+.address,
+.phone,
+.company {
+  height: 70px;
+  overflow: auto;
+  background-color: rgb(255, 255, 255);
+  float: left;
+}
+
+.name {
+  width: 120px;
+}
+
+.username {
+  width: 170px;
+}
+
+.email {
+  width: 250px;
+}
+
+.address {
+  width: 200px;
+}
+
+.phone {
+  width: 150px;
+}
+
+.company {
+  width: 120px;
+}
+
+.columns {
+  height: 35px;
+  font-size: 110%;
+  background-color: rgb(242, 242, 253);
+  width: 99%;
+}
+.columns div {
+  margin-top: -6px;
+  display: flex;
+  background-color: rgb(117, 117, 117);
+  color: aliceblue;
+  height: 100%;
+  font-size: 120%;
+  align-items: center;
+  justify-content: center;
+}
+
+.addUserButton {
+  width: 10%;
+  float: right;
+  height: 100%;
+  background-color: rgb(117, 117, 117);
+  color: aliceblue;
+  cursor: pointer;
+  border: rgba(0, 0, 0, 0) solid 2px;
+  font-size: 110%;
+  outline: none;
+  overflow: hidden;
+}
+.addUserButton:hover {
+  border: black solid 2px;
+  background-color: #424242;
+  border-radius: 3px;
+}
+
+.actionConfirmationWrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  z-index: 10000;
+  transition: 0.5s;
+  transform: scale(1.3);
+  opacity: 0;
+  visibility: hidden;
+}
+.actionConfirmationWrapper.active {
+  transform: scale(1);
+  opacity: 1;
+  visibility: visible;
+}
+.actionConfirmationWrapper .wrapperContent {
+  position: relative;
+  width: 24%;
+  height: 20%;
+  background-color: rgb(242, 242, 253);
+  border: rgb(56, 56, 56) solid 1px;
+  font-size: 90%;
+  box-shadow: 0 0 5px rgb(189, 189, 189);
+  border-radius: 5px;
+  z-index: 10000;
+  transition: 0.5s;
+  transform: scale(1.3);
+}
+.actionConfirmationWrapper .controlsElements {
+  position: relative;
+  text-align: center;
+  justify-content: center;
+  top: 20%;
+  width: 100%;
+  height: 60%;
+}
+.actionConfirmationWrapper .controlsElements span {
+  font-size: 120%;
+  font-weight: 600;
+}
+.actionConfirmationWrapper .wrapperButtons {
+  margin-top: 25px;
+}
+.actionConfirmationWrapper .wrapperButtons button {
+  width: 25%;
+  background-color: rgb(117, 117, 117);
+  color: aliceblue;
+  cursor: pointer;
+  border: rgba(0, 0, 0, 0) solid 2px;
+  font-size: 110%;
+  border-radius: 3px;
+}
+.actionConfirmationWrapper .close-icon {
+  position: relative;
+  float: right;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  z-index: 10000;
+  user-select: none;
+}
+.actionConfirmationWrapper .close-icon::before, .actionConfirmationWrapper .close-icon::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 14px;
+  height: 2px;
+  background-color: #000;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.actionConfirmationWrapper .close-icon::before {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+.actionConfirmationWrapper #continueDeleting,
+.actionConfirmationWrapper #cancelDeleting {
+  background-color: rgb(117, 117, 117);
+  color: aliceblue;
+  border: rgba(0, 0, 0, 0) solid 2px;
+  outline: none;
+}
+.actionConfirmationWrapper #continueDeleting:hover,
+.actionConfirmationWrapper #cancelDeleting:hover {
+  border: black solid 2px;
+  background-color: #424242;
+  border-radius: 3px;
+}
+
+.addUserWrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  z-index: 10000;
+  transition: 0.5s;
+  transform: scale(1.3);
+  opacity: 0;
+  visibility: hidden;
+}
+.addUserWrapper.active {
+  transform: scale(1);
+  opacity: 1;
+  visibility: visible;
+}
+.addUserWrapper form {
+  position: relative;
+  background-color: rgb(242, 242, 253);
+  border: rgb(56, 56, 56) solid 1px;
+  box-shadow: 0 0 5px rgb(189, 189, 189);
+  border-radius: 5px;
+  max-width: 50rem;
+  width: 100%;
+  padding: 2rem;
+  box-shadow: var(--box-shadow);
+  border-radius: 0.5rem;
+  margin: 2rem;
+  transform: scale(0.5);
+  overflow-y: scroll;
+}
+.addUserWrapper form h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-top: 2rem;
+}
+.addUserWrapper form .control {
+  margin-bottom: 2rem;
+}
+.addUserWrapper form .control2 {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+.addUserWrapper form label {
+  display: block;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.addUserWrapper form input {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.8rem;
+  display: block;
+  border: 1px solid rgb(56, 56, 56);
+  padding: 1.3rem 0;
+  text-indent: 1rem;
+  border-radius: 0.5rem;
+  width: 100%;
+  border: rgb(175, 175, 175) solid 1px;
+}
+.addUserWrapper form input.error-border {
+  border: red solid 1px;
+}
+.addUserWrapper form .error {
+  color: red;
+}
+.addUserWrapper form button {
+  display: block;
+  width: 100%;
+  padding: 1.3rem 0;
+  background-color: rgb(117, 117, 117);
+  color: aliceblue;
+  cursor: pointer;
+  border: rgba(0, 0, 0, 0) solid 2px;
+  font-size: 200%;
+  border-radius: 3px;
+}
+.addUserWrapper form .links {
+  margin-top: 2rem;
+}
+.addUserWrapper form .links span {
+  display: block;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+.addUserWrapper form .links span a {
+  color: #f1f1f1;
+}
+.addUserWrapper form .links span a:hover {
+  text-decoration: underline;
+}
+.addUserWrapper form .close-icon {
+  position: relative;
+  transform: scale(1.5);
+  float: right;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  z-index: 10000;
+  user-select: none;
+}
+.addUserWrapper form .close-icon::before, .addUserWrapper form .close-icon::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 14px;
+  height: 2px;
+  background-color: #000;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.addUserWrapper form .close-icon::before {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/*# sourceMappingURL=styles.css.map */
