@@ -35,6 +35,7 @@ main {
   height: 88vh;
   overflow-y: scroll;
   overflow-x: scroll;
+  box-shadow: 0 0 5px black;
 }
 
 body {
