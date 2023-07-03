@@ -33,13 +33,11 @@ $add-user-wrapper-transition: 0.5s;
 
 header {
   height: 55px;
-  align-items: center;
+  display: flex;
   justify-content: center;
+  align-items: center;
 
   h1 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     color: $primary-color;
     text-shadow: 0 0 5px black;
   }
@@ -49,15 +47,24 @@ header {
     justify-content: center;
   }
 }
+main{
+  overflow-y: scroll;
+  overflow-x: scroll;
+}
 
 body {
   font-family: Arial, sans-serif;
   background-color: rgb(80, 88, 145);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 12fr;
 }
 
 .userBlock {
   overflow: hidden;
   box-shadow: 0 0 5px black;
+  overflow-x: scroll;
+  display: grid;
 }
 
 .userBlock div {
