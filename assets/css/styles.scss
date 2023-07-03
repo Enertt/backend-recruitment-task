@@ -65,6 +65,8 @@ body {
   border-left: $secondary-color solid 1px;
   border-right: $secondary-color solid 1px;
   padding: 5px;
+  display: grid;
+  grid-template-columns: 6fr 9fr 10fr 10fr 8fr 12fr 8fr;
 }
 
 .userInfo {
@@ -73,7 +75,7 @@ body {
   width: 99%;
 
   .removeUserButton {
-    width: 10%;
+    width: 100%;
     position: relative;
     float: right;
     height: 35px;
@@ -149,7 +151,7 @@ body {
 }
 
 .addUserButton {
-  width: 10%;
+  width: 100%;
   float: right;
   height: 100%;
   background-color: $button-background;

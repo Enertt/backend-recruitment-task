@@ -15,11 +15,11 @@
         <div class='userBlock'>
             <?php require_once './partials/main.php'; ?>
         </div>
-        <!-- Form for action confirmation -->
-        <?php require_once './partials/actionConfirmationWrapper/actionConfirmationWrapper.php'; ?>
-        <!-- Form for adding a new user to the JSON file -->
-        <?php require_once './partials/addUserWrapper/addUserWrapper.php'; ?>
     </main>
+    <!-- Form for action confirmation -->
+    <?php require_once './partials/actionConfirmationWrapper/actionConfirmationWrapper.php'; ?>
+    <!-- Form for adding a new user to the JSON file -->
+    <?php require_once './partials/addUserWrapper/addUserWrapper.php'; ?>
     <script src="assets/js/script.js"></script>
 </body>
 </html>
